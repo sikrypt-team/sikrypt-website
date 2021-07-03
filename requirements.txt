@@ -1,0 +1,11 @@
+flask
+flask-migrate
+flask-login
+flask-wtf
+flask-sqlalchemy
+gunicorn
+Jinja2
+MarkupSafe
+click
+itsdangerous
+Werkzeug
