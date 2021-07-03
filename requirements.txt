@@ -9,3 +9,4 @@ MarkupSafe
 click
 itsdangerous
 Werkzeug
+email_validator
