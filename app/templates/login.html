@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>
+	<style type="text/css">
+		body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #c3c9c5;
+}
+.box{
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #191919;
+  text-align: center;
+}
+.box h1{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box input[type = "text"],.box input[type = "password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+  width: 280px;
+  border-color: #2ecc71;
+}
+.box input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:hover{
+  background: #2ecc71;
+}
+
+.box a{
+  text-decoration: none;
+  color: white;
+}
+
+.box p{
+  color: white;
+}
+
+	</style>
+</head>
+<body>
+ {%block content%} 
+
+	<form class="box" action="" method="POST" nonvalidate>
+    <h1>Sign In</h1>
+    {{form.hidden_tag()}}
+    <p>
+      {{form.username.label}}<br>
+      {{form.username(size=32)}}<br>
+      {% for error in form.username.errors%}
+      <span style="color:red;">[{{error}}]</span>
+      {% endfor %}
+    </p>
+		<p>
+      {{form.password.label}}<br>
+      {{form.password(size=32)}}<br>
+      {% for error in form.password.errors%}
+      <span style="color:red;">[{{error}}]</span>
+      {% endfor %}
+    </p>
+    <p>{{form.remember_me()}} {{form.remember_me.label}}</p>
+    <p>{{form.submit()}}</p>
+	</form>
+	{%endblock%}
+</div>
+</body>
+</html>

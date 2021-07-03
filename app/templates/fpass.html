@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Forgot Password</title>
+	<link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
+<style type="text/css">
+	h3{
+		font-family: consolas;
+	}
+</style>
+<body>
+{%block content%}	
+<h3>Forgot Your Password ? </h3>
+<form action="fpass.php" method="POST">
+	{{form.hidden_tag()}}
+	<p>
+		{{form.email.label}}
+		{{form.email(size=72)}}
+		{%for error in form.email.errors%}
+		<span style="color:red;">{{error}}</span>
+		{%endfor%}
+	</p>
+	<p>{{form.submit}}</p>
+</form>
+{%endblock}
+</body>
+</html>

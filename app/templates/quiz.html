@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+	*{
+		border-radius: 5px;
+
+	}
+	p {
+		padding: 10px;
+		color: white;
+		text-align: center;
+		margin-top: 2rem ;
+		font-family: "Open Sans";
+
+	}
+	input[type = "text"]{
+		height: 30px;
+		/*background-color: white;*/
+		border: 2px solid blue;
+		width: 30%;
+		font-family: "Open Sans"
+	}
+	input[type = "text"]:focus{
+		height: 30px;
+		background-color: white;
+		width: 50%;
+		font-family: "Open Sans"
+		border: 2px solid blue;
+	}
+	input[type = "submit"]{
+		width: 30%;
+		height: 36px;
+		border:0;
+ 		background: none;
+ 		display: block;
+  		margin: auto;
+  		text-align: center;
+  		border: 2px solid #2ecc71;
+  		outline: none;
+  		color: white;
+  		transition: 0.3s ease;
+  		cursor: pointer;
+	}
+</style>
+{% if level == 2 %}
+<img src="https://media.discordapp.net/attachments/851723592323694592/857894755975036948/index.jpg">
+{% endif %}
+<form action="" method="POST">
+	{{form.hidden_tag()}}
+<p>{{question}}</p>
+<p>
+	{{form.ans.label}}<br>
+	{{form.ans(size=1000)}}<br>
+	{% for error in form.ans.error%}
+	<span style="color:red;">{{error}}</span>
+	{% endfor %}
+</p>	
+<p>{{form.submit()}}</p>
+</form>
+{% endblock %}
+</body>
+</html>

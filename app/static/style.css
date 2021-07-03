@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  /*font-weight: 600;*/
+}
+
+h1{
+  font-family: "Open Sans";
+  color: #eee;
+}
+
+li ,a , button{
+  font-family: "Open Sans";
+  font-weight: 500;
+  font-size: 16px;
+  color: #eee;
+  text-decoration: none;
+}
+
+.page-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  position:sticky;
+}
+
+.nav-links{
+  list-style-type: none;
+}
+.nav-links li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav-links li a{
+  transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover{
+  color: #047eb3  ;
+}
+
+button{
+  color: black;
+  padding: 9px 25px;
+  background-color:#00DCDC;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover{
+  background-color:#00AEAE;
+
+}
+
+.text-area{
+  text-align: center;
+  font-family : "Open Sans";
+  font-weight: 500;
+  font-size: 16px;
+  color: #eee;
+  width: 75%;
+  height: 85%;
+  text-decoration: none;
+}
+
+
+.banner-area{
+    position: relative;
+    width: 100%;
+    height: 120vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-area img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height : 70%;
+}
+
+.about-area, .leaderboard-area, .rules-area{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.about-area{
+    background-color: black;
+    height:400px;
+}
+.rules-area{
+    background-color:black;
+    color: #fff;
+    text-decoration: none;
+    height: 800px;
+}
+
+.leaderboard-area{
+    background-color: black;
+}
+
+table{
+  margin-right: auto;
+  margin-left: auto;
+  border-spacing: 1rem;
+}
+
+th {
+  letter-spacing: 2px;
+  padding-right: 10px;
+  text-align: left;
+}
+
+td{
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.rules-area .text-area li{
+  text-align: left;
+}
+
+.rules-area li{
+  padding: 10px;
+}
+
+.about-area h4{
+  padding: 10px;
+  text-align: left ;
+}

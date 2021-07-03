@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sikrypt</title>
+	<link rel="stylesheet"  href="{{url_for('static',filename='style.css')}}">
+  	<link rel="shortcut icon" type="image/png" href="{{url_for('static',filename='favicon.png')}}">
+</head>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&display=swap');
+table{
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+  border-spacing: 1rem;
+}
+
+th {
+  font-family: "Open Sans";
+  letter-spacing: 2px;
+  padding-right: 10px;
+  text-align: left;
+}
+
+td{
+  font-family: "Open Sans";
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+</style>
+<body>
+<div class="page-header">
+	<img style="width: 13%;"src="{{url_for('static',filename='s3.png')}}">
+	<nav>
+    	<ul class="nav-links">
+    	  <li><a href="#about">About</a></li>
+    	  <li><a href="#rules">Rules</a></li>
+    	  <li><a href="#leaderboard">Leaderboard</a></li>
+   		</ul>
+  	</nav>
+  	<a class="cta" href="/register"><button>Register</button></a>
+  	{% if current_user.is_anonymous %}
+  	<a class="cta" href="/login"><button>Login</button></a>
+  	{% else %}
+  	<a class="cta" href="/logout"><button>Logout</button></a>
+  	{% endif %}
+</div>
+
+<section class="banner-area" id="home">
+	<img src="{{url_for('static',filename='logo.png')}}">
+</section>
+
+<section class="about-area" id="about">
+	<div class="text-area">
+		<h2>About &#128214</h2>	
+<h4>
+
+Sikrypt 2021 is the first edition of the annual cryptic hunt organized by students of Kothari International School, Noida.
+
+The hunt consists of  20 brain wrecking questions based on famous incidents, figures and internet culture.<br><br> The goal of the participant is to answer the questions as fast as possible using the hints given to place themselves at the top of the leaderboard.
+
+The top competitors who reach the highest levels in the shortest amount of time shall receive the prizes.<br>The participant is free to use the internet to search for the answers.
+<br>
+<br>
+The competitor who completes all 20 questions or ends at the top of the leaderboard when the event ends, shall be declared as the winner of Sikrypt 2021.
+
+</h4>
+	</div>
+</section>
+
+<section class="rules-area" id="rules">
+	<div class="text-area">
+		<h1>Rules &#128195</h1>
+<h4>
+<ul>
+<li>Hunt will begin at Sat Oct 2 2021, 12:00 am and will end at Sunday Oct 3 2021, 11:59 pm</li>
+
+<li>Sikrypt is a cryptic hunt, the team has to make their way through multiple levels to reach the top of the leaderboard</li>
+
+<li>Not all levels are equal, some might be worth more points than others, winner is decided by the points, not the level.</li>
+
+<li>Each level will contain a question either in the form of text or a link or an image. Hints (text/link/image) may be provided as well to help the participant.</li>
+
+<li>Besides, hints will be released on our Discord Server. It's highly recommended that you join it.</li>
+
+<li>Sikrypt also has Notifications Where you will be notified instantly of any updates the admins make while your are on the play page. (These could be clues, hints, announcements)</li>
+
+<li>Answers will always be lower-case, alphanumeric and will contain no spaces. Special characters are not allowed.</li> 
+
+<li>Every clue in the question is important. If it wasn't important, it wouldn't be there</li>
+
+<li>Beware of the spelling you enter, we do not autocorrect.</li>
+
+<li>Do not spam admins or other participants, it may lead to your disqualification</li>
+
+<li>And if it was not obvious, answer sharing, hint sharing and collaborating with other teams in general is not allowed and any such evidence can lead to disqualification</li>
+</ul>
+</h4>
+	</div>
+</section>
+
+<section class="leaderboard-area" id="leaderboard">
+	<h1></h1><br>
+	<table>
+		<tr>
+			<th style="text-align:center;">Leaderboard &#127942</th>
+		</tr>
+		<tr>
+			<th>Username</th>
+			<th>Score</th> 
+		</tr>
+		{% for user in ulist %}	
+			<tr>
+				<td>{{user.username}}</td>
+				<td>{{user.score}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+</section>
+
+</body>
+</html>
